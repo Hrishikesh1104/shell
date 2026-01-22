@@ -47,7 +47,7 @@ vector<string> parse_input(const string& input){
   	string current;
   	bool in_single_quotes = false;
   	bool in_double_quotes = false;
-  	for(int i=0; i<input.size(); i++){
+  	for(size_t i=0; i<input.size(); i++){
   	  	char c=input[i];
   	  	if(in_single_quotes){
   	    	if(c=='\'')
@@ -94,8 +94,8 @@ string longest_common_prefix(const vector<string>& strs){
     if (strs.empty()) return "";
 
     string prefix = strs[0];
-    for(int i=1; i<strs.size(); i++){
-        int j = 0;
+    for(size_t i=1; i<strs.size(); i++){
+        size_t j = 0;
         while(j<prefix.size() && j<strs[i].size() && prefix[j]==strs[i][j]){
             j++;
         }
@@ -239,7 +239,7 @@ int handle_tab(int, int) {
 	} 
 	else{
 		cout<<"\n";
-		for(int i=0; i<matches.size(); i++){
+		for(size_t i=0; i<matches.size(); i++){
 			cout<<matches[i];
 			if(i+1<matches.size()) cout << "  ";
 		}
@@ -260,7 +260,7 @@ int handle_tab(int, int) {
 // ------------------------------------------------------------
 void execute_builtin(vector<string>& tokens){
     if(tokens[0] == "echo"){
-        for(int i=1; i<tokens.size(); i++){
+        for(size_t i=1; i<tokens.size(); i++){
             cout<<tokens[i];
             if(i+1<tokens.size()) cout << " ";
         }
@@ -464,7 +464,7 @@ int main(){
     	// ------------------------------------------------------------
     	// Handle I/O Redirection
     	// ------------------------------------------------------------
-		for(int i=0; i<tokens.size(); i++){
+		for(size_t i=0; i<tokens.size(); i++){
 			if(tokens[i]==">>" || tokens[i]=="1>>"){
         		redirect_out = true;
         		append_out = true;
@@ -568,7 +568,7 @@ int main(){
 
     	// echo: print arguments
     	else if(tokens[0]=="echo"){
-    	  	for(int i=1; i<tokens.size(); i++){
+    	  	for(size_t i=1; i<tokens.size(); i++){
     	    	cout<<tokens[i];
     	    	if(i+1<tokens.size()) cout<<" ";
     	  	}
