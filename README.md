@@ -46,16 +46,16 @@ A feature-rich custom shell implementation written in C++ with a web-based inter
 ## Project Structure
 
 shell-project/
-├── shell.cpp            # Main C++ shell implementation
-├── shell                # Compiled shell executable (generated)
-├── Makefile             # Build configuration for local development
-├── Dockerfile           # Container build configuration
-├── README.md            # This file
-└── server/              # Node.js web server
-    ├── package.json     # Node.js dependencies
-    ├── server.js        # Express + WebSocket server
-    └── public/
-        └── index.html   # Web frontend interface
+  shell.cpp            # Main C++ shell implementation
+  shell                # Compiled shell executable (generated)
+  Makefile             # Build configuration for local development
+  Dockerfile           # Container build configuration
+  README.md            # This file
+  server/              # Node.js web server
+      package.json     # Node.js dependencies
+      server.js        # Express + WebSocket server
+      public/
+          index.html   # Web frontend interface
 
 ## Prerequisites
 
