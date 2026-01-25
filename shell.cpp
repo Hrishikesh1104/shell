@@ -416,6 +416,8 @@ void execute_pipeline_multi(vector<vector<string>>& stages) {
 // Main Shell Loop (REPL)
 // ------------------------------------------------------------
 int main(){
+	cout<<"[MY CUSTOM SHELL IS RUNNING]\n";
+
   	// Flush after every std::cout / std:cerr
 	cout << std::unitbuf;
   	cerr << std::unitbuf;
@@ -435,7 +437,7 @@ int main(){
 			last_history_written = history_length;
 		}
 	}
-
+	
 
   	// Bind tab key for auto completion
   	rl_bind_key('\t', handle_tab);

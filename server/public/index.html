@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<pre id="out"></pre>
+<input id="in" autofocus />
+
+<script>
+  const key = prompt("Enter access key:");
+
+  const ws = new WebSocket(`ws://${location.host}?key=${key}`);
+  const out = document.getElementById("out");
+  const input = document.getElementById("in");
+
+  ws.onmessage = e => out.textContent += e.data;
+  ws.onclose = () => out.textContent += "\n[Connection closed]";
+
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      ws.send(input.value + "\n");
+      input.value = "";
+    }
+  });
+</script>
+
+</body>
+</html>
